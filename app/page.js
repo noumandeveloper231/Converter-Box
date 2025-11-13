@@ -1,9 +1,45 @@
 'use client';
 
-import { Check } from 'lucide-react';
+import { useState } from 'react';
+import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 import YouTubeConverter from './components/YouTubeConverter';
 
 export default function Home() {
+  const [openFAQ, setOpenFAQ] = useState(new Set());
+
+  const toggleFAQ = (id) => {
+    const newOpenFAQ = new Set(openFAQ);
+    if (newOpenFAQ.has(id)) {
+      newOpenFAQ.delete(id);
+    } else {
+      newOpenFAQ.add(id);
+    }
+    setOpenFAQ(newOpenFAQ);
+  };
+
+  const faqData = [
+    {
+      id: 1,
+      question: "Is this YouTube to MP3 converter free?",
+      answer: "Yes! Our converter is completely free to use. Convert unlimited YouTube videos to MP3 without any charges, subscriptions, or hidden fees."
+    },
+    {
+      id: 2,
+      question: "What audio quality do I get?",
+      answer: "Our converter provides high-quality 128kbps MP3 files that maintain excellent audio clarity while keeping file sizes manageable."
+    },
+    {
+      id: 3,
+      question: "Do I need to install software?",
+      answer: "No installation required! Our converter works entirely in your web browser. Simply visit our website and start converting instantly."
+    },
+    {
+      id: 4,
+      question: "Is it legal to convert YouTube videos?",
+      answer: "Converting YouTube videos for personal use is generally acceptable. However, please respect copyright laws and only convert content you have permission to use."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-6xl mx-auto px-6 py-16 pt-28">
@@ -161,46 +197,37 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="space-y-6 max-w-3xl mx-auto">
-            <div className="border border-gray-100 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-black mb-3">
-                Is this YouTube to MP3 converter free?
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Yes! Our converter is completely free to use. Convert unlimited YouTube videos to MP3
-                without any charges, subscriptions, or hidden fees.
-              </p>
-            </div>
-
-            <div className="border border-gray-100 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-black mb-3">
-                What audio quality do I get?
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Our converter provides high-quality 128kbps MP3 files that maintain
-                excellent audio clarity while keeping file sizes manageable.
-              </p>
-            </div>
-
-            <div className="border border-gray-100 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-black mb-3">
-                Do I need to install software?
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                No installation required! Our converter works entirely in your web browser.
-                Simply visit our website and start converting instantly.
-              </p>
-            </div>
-
-            <div className="border border-gray-100 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-black mb-3">
-                Is it legal to convert YouTube videos?
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Converting YouTube videos for personal use is generally acceptable. However,
-                please respect copyright laws and only convert content you have permission to use.
-              </p>
-            </div>
+          <div className="space-y-4 max-w-3xl mx-auto">
+            {faqData.map((faq) => (
+              <div key={faq.id} className="border border-gray-200 rounded-lg overflow-hidden hover:border-orange-200 transition-colors duration-200">
+                <button
+                  onClick={() => toggleFAQ(faq.id)}
+                  className="w-full px-6 py-4 text-left flex items-center justify-between bg-white hover:bg-gray-50 transition-colors duration-200"
+                >
+                  <h3 className="text-lg font-semibold text-black pr-4">
+                    {faq.question}
+                  </h3>
+                  <div className="flex-shrink-0">
+                    {openFAQ.has(faq.id) ? (
+                      <ChevronUp className="w-5 h-5 text-gray-500" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-gray-500" />
+                    )}
+                  </div>
+                </button>
+                <div 
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    openFAQ.has(faq.id) ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="px-6 pb-4 pt-2 bg-gray-50">
+                    <p className="text-gray-600 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
