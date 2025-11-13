@@ -1,5 +1,5 @@
 import "./globals.css";
-import Analytics from './components/Analytics';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
   title: "ConverterBox - Free YouTube to MP3 Converter Online | Fast & High Quality",
@@ -109,8 +109,8 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="antialiased font-poppins">
-        <Analytics />
         {children}
+        <Analytics />
       </body>
     </html>
   );
