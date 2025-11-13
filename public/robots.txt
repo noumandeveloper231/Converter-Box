@@ -1,13 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
-# Sitemap
+# Host
+Host: https://converterbox.online
+
+# Sitemaps
 Sitemap: https://converterbox.online/sitemap.xml
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
-
-# Block access to sensitive areas
-Disallow: /api/
-Disallow: /_next/
-Disallow: /admin/
