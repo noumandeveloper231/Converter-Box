@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 export const metadata = {
   title: "ConverterBox - Free YouTube to MP3 Converter Online | Fast & High Quality",
   description: "Convert YouTube videos to MP3 files instantly with ConverterBox. Free, fast, and high-quality YouTube to MP3 converter. No registration required. Download MP3 from YouTube in seconds.",
-  keywords: "youtube to mp3, youtube converter, mp3 converter, youtube to mp3 converter, free youtube converter, youtube downloader, convert youtube to mp3, youtube mp3 download",
+  keywords: "youtube to mp3, youtube converter, mp3 converter, youtube to mp3 converter, free youtube converter, youtube downloader, convert youtube to mp3, youtube mp3 download, yt to mp3 converter, yt to mp3 converter online, yt to mp3 converter free, yt to mp3 converter fast, yt to mp3 converter high quality, ",
   authors: [{ name: "ConverterBox" }],
   creator: "ConverterBox",
   publisher: "ConverterBox",
@@ -53,7 +53,7 @@ export const metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'oWknk4LTXTWDT0MBYrRLgZTyWPclN4qeQkpJUehGQJQ',
   },
 };
 
