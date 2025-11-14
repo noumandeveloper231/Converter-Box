@@ -51,10 +51,10 @@ export default function Home() {
           {/* Hero Section */}
           <header className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-black mb-6 leading-tight">
-              YouTube to <span className='text-(--primary-color) underline underline-offset-8'>MP3 Converter</span>
+              <span className='text-(--primary-color)'>ConverterBox</span> - YouTube to <span className='text-(--primary-color) underline underline-offset-8'>MP3 Converter</span>
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-              Convert YouTube videos to high-quality MP3 files instantly with <br/>  <span className='font-semibold text-(--primary-color)'>Converter Box</span>.
+              <strong>ConverterBox</strong> is the best free YouTube to MP3 converter online. Convert YouTube videos to high-quality MP3 files instantly at <span className='font-semibold text-(--primary-color)'>converterbox.online</span>.
               Fast, secure, and completely free.
             </p>
 
@@ -74,10 +74,10 @@ export default function Home() {
         <section id="features" className="mt-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-black mb-4">
-              Why Choose Our Converter?
+              Why Choose ConverterBox?
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Simple, fast, and reliable YouTube to MP3 conversion with no compromises.
+              ConverterBox offers simple, fast, and reliable YouTube to MP3 conversion with no compromises. Experience the best converter at converterbox.online.
             </p>
           </div>
 
@@ -207,7 +207,7 @@ export default function Home() {
                   <h3 className="text-lg font-semibold text-black pr-4">
                     {faq.question}
                   </h3>
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     {openFAQ.has(faq.id) ? (
                       <ChevronUp className="w-5 h-5 text-gray-500" />
                     ) : (
@@ -233,10 +233,10 @@ export default function Home() {
 
         <footer className="mt-20 pt-12 border-t border-gray-100 text-center">
           <p className="text-sm text-gray-600 mb-2">
-            © 2025 ConverterBox - Free YouTube to MP3 Converter
+            © 2025 <strong>ConverterBox</strong> - Best Free YouTube to MP3 Converter Online | converterbox.online
           </p>
           <p className="text-xs text-gray-500">
-            For personal use only. Please respect copyright laws and terms of service.
+            ConverterBox is for personal use only. Please respect copyright laws and terms of service.
           </p>
         </footer>
       </div>

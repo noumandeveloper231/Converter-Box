@@ -3,11 +3,12 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Navbar from './components/Navbar';
 import Script from "next/script";
+import AnalyticsTracker from "./components/AnalyticsTracker";
 
 export const metadata = {
-  title: "ConverterBox - Free YouTube to MP3 Converter Online | Fast & High Quality",
-  description: "Convert YouTube videos to MP3 files instantly with ConverterBox. Free, fast, and high-quality YouTube to MP3 converter. No registration required. Download MP3 from YouTube in seconds.",
-  keywords: "youtube to mp3, youtube converter, mp3 converter, youtube to mp3 converter, free youtube converter, youtube downloader, convert youtube to mp3, youtube mp3 download, yt to mp3 converter, yt to mp3 converter online, yt to mp3 converter free, yt to mp3 converter fast, yt to mp3 converter high quality, ",
+  title: "ConverterBox | Free YouTube to MP3 Converter Online - Fast & High Quality",
+  description: "ConverterBox is the best free YouTube to MP3 converter online. Convert YouTube videos to high-quality MP3 files instantly. Fast, secure, and no registration required at converterbox.online.",
+  keywords: "converterbox, converterbox online, converterbox.online, youtube to mp3, youtube converter, mp3 converter, youtube to mp3 converter, free youtube converter, youtube downloader, convert youtube to mp3, youtube mp3 download, yt to mp3 converter, yt to mp3 converter online, yt to mp3 converter free, yt to mp3 converter fast, yt to mp3 converter high quality",
   authors: [{ name: "ConverterBox" }],
   creator: "ConverterBox",
   publisher: "ConverterBox",
@@ -21,8 +22,8 @@ export const metadata = {
     canonical: 'https://converterbox.online',
   },
   openGraph: {
-    title: "ConverterBox - Free YouTube to MP3 Converter Online",
-    description: "Convert YouTube videos to MP3 files instantly. Free, fast, and high-quality YouTube to MP3 converter. No registration required.",
+    title: "ConverterBox | Best Free YouTube to MP3 Converter Online",
+    description: "ConverterBox is the best free YouTube to MP3 converter online. Convert YouTube videos to high-quality MP3 files instantly at converterbox.online.",
     url: 'https://converterbox.online',
     siteName: 'ConverterBox',
     images: [
@@ -38,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "ConverterBox - Free YouTube to MP3 Converter Online",
-    description: "Convert YouTube videos to MP3 files instantly. Free, fast, and high-quality YouTube to MP3 converter.",
+    title: "ConverterBox | Best Free YouTube to MP3 Converter Online",
+    description: "ConverterBox is the best free YouTube to MP3 converter online. Convert YouTube videos to high-quality MP3 files instantly.",
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -91,10 +92,12 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "WebApplication",
               "name": "ConverterBox",
+              "alternateName": ["Converter Box", "converterbox.online"],
               "url": "https://converterbox.online",
-              "description": "Free YouTube to MP3 converter online. Convert YouTube videos to high-quality MP3 files instantly.",
+              "description": "ConverterBox is the best free YouTube to MP3 converter online. Convert YouTube videos to high-quality MP3 files instantly with our fast and secure converter.",
               "applicationCategory": "MultimediaApplication",
               "operatingSystem": "Any",
+              "browserRequirements": "Requires JavaScript. Requires HTML5.",
               "offers": {
                 "@type": "Offer",
                 "price": "0",
@@ -102,16 +105,22 @@ export default function RootLayout({ children }) {
               },
               "featureList": [
                 "YouTube to MP3 conversion",
-                "High-quality audio output",
+                "High-quality 128kbps audio output",
                 "Fast processing",
                 "No registration required",
-                "Free to use"
+                "Free to use",
+                "Secure and private",
+                "Works on all devices"
+              ],
+              "sameAs": [
+                "https://converterbox.online"
               ]
             })
           }}
         />
       </head>
       <body className="antialiased font-poppins">
+        <AnalyticsTracker />
         <Navbar />
         {children}
 
