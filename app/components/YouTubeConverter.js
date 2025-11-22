@@ -140,23 +140,23 @@ export default function YouTubeConverter() {
   return (
     <div className="max-w-3xl mx-auto relative ">
       {/* URL Input */}
-      <div className="bg-white/50 border border-gray-300 rounded-xl p-8">
+      <div className="bg-white/50 border border-gray-300 rounded-xl p-4 sm:p-6 md:p-8">
         <label className="block text-lg font-semibold mb-4 text-black">
           Enter <span className='text-(--primary-color)'>YouTube</span> URL
         </label>
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-3">
           <input
             ref={inputRef}
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             placeholder="https://www.youtube.com/watch?v=..."
-            className="flex-1 px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#fba363] focus:outline-none transition-colors duration-200 text-black placeholder-gray-400"
+            className="sm:flex-1 w-full min-w-0 px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#fba363] focus:outline-none transition-colors duration-200 text-black placeholder-gray-400"
             disabled={loading || downloading}
           />
           <button
             onClick={handleReset}
             disabled={loading || downloading}
-            className="px-6 py-3 bg-gray-100 hover:bg-gray-200 disabled:bg-gray-50 disabled:text-gray-400 text-gray-700 rounded-lg font-medium transition-colors duration-200"
+            className="w-full sm:w-auto px-6 py-3 bg-gray-100 hover:bg-gray-200 disabled:bg-gray-50 disabled:text-gray-400 text-gray-700 rounded-lg font-medium transition-colors duration-200"
           >
             {(loading || downloading) ? (
               <div className="animate-spin w-5 h-5 border-2 border-gray-400 border-t-transparent rounded-full"></div>

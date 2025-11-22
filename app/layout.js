@@ -4,6 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import Navbar from './components/Navbar';
 import Script from "next/script";
 import AnalyticsTracker from "./components/AnalyticsTracker";
+import SelfPing from './components/SelfPing';
 
 export const metadata = {
   title: "ConverterBox | Free YouTube to MP3 Converter Online - Fast & High Quality",
@@ -121,6 +122,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="antialiased font-poppins">
         <AnalyticsTracker />
+        <SelfPing />
         <Navbar />
         {children}
 
